@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/gradient_color"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MatchActivity">
@@ -11,21 +12,82 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:textColor="@color/white"
         android:text="Home Team"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/home_logo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="20dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/home"
+        app:layout_constraintTop_toBottomOf="@id/txt_home"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    =
+        <ImageView
+            android:id="@+id/home_logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="20dp" /> />
+
+        <TextView
+            android:id="@+id/score_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="40dp"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="80sp"
+            app:layout_constraintLeft_toRightOf="@id/home_logo" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/skor_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_home"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintTop_toBottomOf="@id/home">
+
+        <Button
+            android:id="@+id/add1_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+1">
+        </Button>
+        <Button
+            android:id="@+id/add2_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+2">
+        </Button>
+        <Button
+            android:id="@+id/add3_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+3">
+        </Button>
+        <Button
+            android:id="@+id/reset_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </LinearLayout>
+
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -34,77 +96,99 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
 
-    <TextView
-        android:id="@+id/score_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="3"
-        android:textSize="80sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_logo" />
 
-    <Button
-        android:id="@+id/btn_add_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Add Home Score"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+<!--        app:layout_constraintStart_toStartOf="@id/home_logo" /-->
+
+
 
 
     <TextView
         android:id="@+id/txt_away"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:layout_marginBottom="20dp"
+        android:text="Away Team"
+        android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/skor_home"
+        android:layout_marginTop="70dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/away_logo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/txt_away"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/ic_launcher" />
-
-    <TextView
-        android:id="@+id/score_away"
+    <LinearLayout
+        android:id="@+id/away"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="3"
-        android:textSize="80sp"
-        app:layout_constraintBottom_toTopOf="@+id/away_logo"
+        app:layout_constraintTop_toBottomOf="@+id/txt_away"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <Button
-        android:id="@+id/btn_add_away"
-        android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/away_logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:id="@+id/score_away"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="0"
+            android:textSize="80sp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="40dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/skor_away"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Add Away Score"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintTop_toBottomOf="@id/away">
+
+        <Button
+            android:id="@+id/add1_away"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+1">
+        </Button>
+        <Button
+            android:id="@+id/add2_away"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+2">
+        </Button>
+        <Button
+            android:id="@+id/add3_away"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+3">
+        </Button>
+        <Button
+            android:id="@+id/reset_away"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </LinearLayout>
+
 
     <Button
         android:id="@+id/btn_result"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cek Hasil"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="View Result"
+        app:layout_constraintTop_toBottomOf="@id/skor_home"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
